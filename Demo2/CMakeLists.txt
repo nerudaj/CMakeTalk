@@ -6,7 +6,7 @@ set ( CMAKE_CXX_STANDARD 26 ) # /std:c++latest in MSVC
 
 option ( ENABLE_TESTS "Enable building unit test target" ON )
 
-project ( CMakeTalk
+project ( Demo2
 	VERSION 0.42.0
 	DESCRIPTION "CMake demonstration for C++ talk"
 )

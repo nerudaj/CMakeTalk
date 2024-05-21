@@ -3,7 +3,7 @@ cmake_minimum_required ( VERSION 3.26 )
 set ( CMAKE_CXX_STANDARD 23 )
 set ( CMAKE_GENERATOR_PLATFORM x64 )
 
-project ( CMakeTalk )
+project ( Demo1 )
 
 add_library ( ${PROJECT_NAME}
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/Lib.hpp"
@@ -12,4 +12,5 @@ add_library ( ${PROJECT_NAME}
 
 target_include_directories ( ${PROJECT_NAME}
 	PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include"
+	# gcc -I"${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
