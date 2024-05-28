@@ -13,8 +13,33 @@ target_include_directories ( ${TARGET_NAME}
 )
 
 install (
-	DIRECTORY	"${CMAKE_CURRENT_SOURCE_DIR}/include"
-	DESTINATION "."
+	FILES
+		"${CMAKE_CURRENT_BINARY_DIR}/Debug/${TARGET_NAME}${CMAKE_DEBUG_POSTFIX}.lib"
+	DESTINATION
+		"lib"
 )
 
-# TODO: install libfiles
+install (
+	FILES
+		"${CMAKE_CURRENT_BINARY_DIR}/Release/${TARGET_NAME}.lib"
+	DESTINATION
+		"lib"
+)
+
+install (
+	DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include"
+	DESTINATION "¨."
+)
+
+# Proper way to achieve the same thing, but requires two build dirs and multibuild config
+# https://cmake.org/cmake/help/v3.26/guide/tutorial/Packaging%20Debug%20and%20Release.html
+# also requires you to annotate all header files with correct properties
+# https://stackoverflow.com/questions/54271925/how-to-configure-cmakelists-txt-to-install-public-headers-of-a-shared-library
+# install( TARGETS ${TARGET_NAME}
+# 		CONFIGURATIONS Debug Release
+#        ARCHIVE
+# 			DESTINATION lib
+#        LIBRARY
+#			DESTINATION lib
+#		PUBLIC_HEADER DESTINATION "include" # or FILE_SET
+# )
