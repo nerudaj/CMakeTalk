@@ -1,16 +1,16 @@
 cmake_minimum_required ( VERSION 3.26 )
 
-project ( demo-bin )
+set ( TARGET_NAME demo-bin )
 
-add_executable ( ${PROJECT_NAME}
+add_executable ( ${TARGET_NAME}
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/Main.cpp"
 )
 
-target_link_libraries ( ${PROJECT_NAME}
+target_link_libraries ( ${TARGET_NAME}
 	LINK_PRIVATE demo-lib
 )
 
 install (
-	FILES "${CMAKE_CURRENT_BINARY_DIR}/Release/${PROJECT_NAME}.exe"
+	FILES "${CMAKE_CURRENT_BINARY_DIR}/Release/${TARGET_NAME}.exe"
 	DESTINATION "bin"
 )
