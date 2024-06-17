@@ -10,16 +10,17 @@ include ( "${CMAKE_SOURCE_DIR}/cmake/CPM.cmake" )
 
 set ( CMAKE_CXX_STANDARD 26 ) # /std:c++latest in MSVC
 
+# cmake .. -DENABLE_TESTS=ON
 option ( ENABLE_TESTS "Enable building unit test target" ON )
 
 add_subdirectory ( "${CMAKE_SOURCE_DIR}/bin" )
 add_subdirectory ( "${CMAKE_SOURCE_DIR}/lib" )
 
 if ( ${ENABLE_TESTS} )
-	enable_testing()
+	enable_testing() # ctest
 	add_subdirectory ( "${CMAKE_SOURCE_DIR}/tests" )
 endif()
 
-include ( CPack )
+include ( CPack ) # cpack
 
 set ( CPACK_GENERATOR "NSIS" )

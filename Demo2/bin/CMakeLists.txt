@@ -11,6 +11,7 @@ target_link_libraries ( ${TARGET_NAME}
 )
 
 install (
-	FILES "${CMAKE_CURRENT_BINARY_DIR}/Release/${TARGET_NAME}.exe"
-	DESTINATION "bin"
+	TARGETS ${TARGET_NAME}
+	CONFIGURATIONS Release
+	RUNTIME DESTINATION bin
 )

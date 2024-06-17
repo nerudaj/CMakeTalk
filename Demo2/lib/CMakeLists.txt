@@ -28,7 +28,7 @@ install (
 
 install (
 	DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include"
-	DESTINATION "¨."
+	DESTINATION "."
 )
 
 # Proper way to achieve the same thing, but requires two build dirs and multibuild config

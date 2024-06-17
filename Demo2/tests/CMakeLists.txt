@@ -2,7 +2,7 @@ cmake_minimum_required ( VERSION 3.26 )
 
 CPMAddPackage( "gh:catchorg/Catch2@3.3.2" )
 
-set ( ${TARGET_NAME} demo-tests )
+set ( TARGET_NAME demo-tests )
 
 add_executable( ${TARGET_NAME}
     "${CMAKE_CURRENT_SOURCE_DIR}/src/LibTests.cpp"
