@@ -110,7 +110,7 @@ Jakub Neruda | Safetica
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### What will NOT be in this talk?
-* Dependency management (maybe a little bit)
+* Dependency management
 * Generator expressions
 * Programming using CMake
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
@@ -156,9 +156,9 @@ cpack
 mkdir _build
 cd _build
 cmake .. [-DOPTIONAL_PARAM=ON]
-cmake --build . --config <Debug|Release|Whatever> -j 8
-ctest -C <Debug|Release>
-cpack -C <Debug|Release>
+cmake --build . [--config <Debug|Release|Whatever>]
+ctest [-C <Debug|Release>]
+cpack [-C <Debug|Release>]
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -258,7 +258,6 @@ set (
 	"${CMAKE_BINARY_DIR}/Compiled"
 )
 ```
-* Puts all executables and dynamic libraries into the same folder
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
